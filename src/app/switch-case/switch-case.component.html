@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+    <div class="offset-2 col-md-8 offset-2">
+      <div [ngSwitch]="arr.length">
+        <div *ngSwitchCase="7">Length is 7.</div>
+        <div *ngSwitchCase="8">Length is 8.</div>
+        <div *ngSwitchCase="9">Length is 9.</div>
+        <div *ngSwitchCase="10">Length is 10.</div>
+        <div *ngSwitchDefault>Length is not given number.</div>
+      </div>
+    </div>
+  </div>

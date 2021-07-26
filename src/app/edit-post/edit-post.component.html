@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="offet-2 col-md-8 offset-2 add-post-div">
+      <h1 class="text-center">Updating Post Control Center</h1>
+      <div class="form-collection">
+        <div class="form-group">
+          <label for="imagePath">Image path: </label>
+          <input autocomplete="off" type="text" [(ngModel)]="post.imagePath" name="imagePath" id="imagePath-input"
+            class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="title">Title: </label>
+          <input autocomplete="off" type="text" [(ngModel)]="post.title" name="title" id="title-input"
+            class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="description">Description: </label>
+          <input autocomplete="off" type="text" [(ngModel)]="post.description" name="description" id="description-input"
+            class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="replyCount">Reply count: </label>
+          <input autocomplete="off" type="number" [(ngModel)]="post.replyCount" name="replyCount" id="replyCount-input"
+            class="form-control">
+        </div>
+        <button (click)="EditPost()" class="btn btn-warning">Yenilə</button>
+        <button (click)="BackToHome()" class="btn btn-danger ml-3">Geriyə</button>
+      </div>
+    </div>
+  </div>
+</div>
