@@ -1,17 +1,23 @@
 <div class="container">
   <div class="row post-details-row">
     <div class="offset-2 col-md-8 offset-2 main-details">
-      <div class="image">
+      <div
+        class="image"
+        style="margin-right: 25px; display: flex; align-items: center"
+      >
         <div class="img-div">
-          <img [src]="post.imagePath" alt="Post Details">
+          <img
+            src="../../assets/api/posts/{{ post.imagePath }}"
+            alt="Post Details"
+          />
         </div>
       </div>
       <div class="contents">
-        <h1>Id: {{post.id}}</h1>
-        <h3>{{post.title}}</h3>
-        <p>{{post.description | sanitaizer}}</p>
-        <p><i class="fa fa-comments comment-i"></i> {{post.replyCount}}</p>
-        <p>{{post.createdDate}}</p>
+        <h1>Id: {{ post.id }}</h1>
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.description | sanitaizer }}</p>
+        <p><i class="fa fa-comments comment-i"></i> {{ post.replyCount }}</p>
+        <p>{{ post.createdDate }}</p>
         <a class="btn btn-danger" routerLink="/posts">Geriyə</a>
       </div>
     </div>

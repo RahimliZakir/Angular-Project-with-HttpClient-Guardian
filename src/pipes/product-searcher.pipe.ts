@@ -2,7 +2,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { Product } from 'src/models/product';
 
 @Pipe({
-  name: 'searching',
+  name: 'productsearcher',
 })
 export class ProductSearcherPipe implements PipeTransform {
   transform(products: Product[], searchText: string): Product[] {

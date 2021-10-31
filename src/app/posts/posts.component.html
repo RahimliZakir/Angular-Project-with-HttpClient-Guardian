@@ -1,4 +1,5 @@
 <header class="topbar-nav">
+  <h1 style="text-align: center">Posts</h1>
   <nav class="navbar navbar-expand fixed-top">
     <ul class="navbar-nav mr-auto align-items-center">
       <li class="nav-item">
@@ -78,9 +79,13 @@
       class="col-md-4"
       *ngFor="let post of posts | postsearcher: searcherFrom"
     >
-      <div class="card" style="width: 19rem">
+      <div class="card">
         <div class="img-div">
-          <img [src]="post.imagePath" class="card-img-top" alt="Posts" />
+          <img
+            src="../../assets/api/posts/{{ post.imagePath }}"
+            class="card-img-top"
+            alt="Posts"
+          />
         </div>
         <div class="card-body text-center">
           <h5 class="card-title">{{ post.title }}</h5>
@@ -88,18 +93,22 @@
           <p class="reply-count">
             <i class="fa fa-comments comment-i"></i> {{ post.replyCount }}
           </p>
-          <a [routerLink]="['/post-details', post.id]" class="btn btn-primary"
-            >Ətraflı</a
-          >
-          <a [routerLink]="['/edit-post', post.id]" class="btn btn-warning ml-1"
-            >Yenilə</a
-          >
-          <a
-            (click)="RemovePost(post)"
-            class="btn btn-danger ml-1"
-            [style.cursor]="pntr"
-            >Sil</a
-          >
+          <div class="buttons">
+            <a [routerLink]="['/post-details', post.id]" class="btn btn-primary"
+              >Ətraflı</a
+            >
+            <a
+              [routerLink]="['/edit-post', post.id]"
+              class="btn btn-warning ml-1"
+              >Yenilə</a
+            >
+            <a
+              (click)="RemovePost(post)"
+              class="btn btn-danger ml-1"
+              [style.cursor]="pntr"
+              >Sil</a
+            >
+          </div>
         </div>
       </div>
     </div>
