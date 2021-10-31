@@ -4,14 +4,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
-import { BasicsAngularComponent } from './basics-angular/basics-angular.component';
-import { ProductsComponent } from './products/products.component';
-import { ProductDetailsComponent } from './product-details/product-details.component';
 import { ProductSearchingPipe } from 'src/pipes/product-searching.pipe';
 import { ManatPipe } from 'src/pipes/manat.pipe';
-import { SwitchCaseComponent } from './switch-case/switch-case.component';
 import { HttpClientModule } from '@angular/common/http';
-import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { FooterComponent } from './footer/footer.component';
 import { GoToTopComponent } from './go-to-top/go-to-top.component';
@@ -26,13 +21,8 @@ import { LoginGuard } from 'src/guards/login.guard';
 @NgModule({
   declarations: [
     AppComponent,
-    BasicsAngularComponent,
-    ProductsComponent,
-    ProductDetailsComponent,
     ProductSearchingPipe,
     ManatPipe,
-    SwitchCaseComponent,
-    NavbarComponent,
     SidebarComponent,
     FooterComponent,
     GoToTopComponent,
@@ -41,15 +31,10 @@ import { LoginGuard } from 'src/guards/login.guard';
     PostSearcherPipe,
     PostDetailsComponent,
     AddPostComponent,
-    EditPostComponent
+    EditPostComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    HttpClientModule
-  ],
-  providers: [LoginGuard],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  providers: [],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
