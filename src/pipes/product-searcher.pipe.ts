@@ -4,7 +4,7 @@ import { Product } from 'src/models/product';
 @Pipe({
   name: 'searching',
 })
-export class ProductSearchingPipe implements PipeTransform {
+export class ProductSearcherPipe implements PipeTransform {
   transform(products: Product[], searchText: string): Product[] {
     searchText = searchText.toLowerCase();
 

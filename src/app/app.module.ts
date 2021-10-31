@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
-import { ProductSearchingPipe } from 'src/pipes/product-searching.pipe';
+import { ProductSearcherPipe } from 'src/pipes/product-searcher.pipe';
 import { ManatPipe } from 'src/pipes/manat.pipe';
 import { HttpClientModule } from '@angular/common/http';
 import { SidebarComponent } from './sidebar/sidebar.component';
@@ -17,11 +17,14 @@ import { PostDetailsComponent } from './post-details/post-details.component';
 import { AddPostComponent } from './add-post/add-post.component';
 import { EditPostComponent } from './edit-post/edit-post.component';
 import { LoginGuard } from 'src/guards/login.guard';
+import { CategoriesComponent } from './categories/categories.component';
+import { ProductsComponent } from './products/products.component';
+import { CategorySearcherPipe } from 'src/pipes/category-searcher.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProductSearchingPipe,
+    ProductSearcherPipe,
     ManatPipe,
     SidebarComponent,
     FooterComponent,
@@ -32,6 +35,9 @@ import { LoginGuard } from 'src/guards/login.guard';
     PostDetailsComponent,
     AddPostComponent,
     EditPostComponent,
+    CategoriesComponent,
+    ProductsComponent,
+    CategorySearcherPipe,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
