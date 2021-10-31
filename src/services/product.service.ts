@@ -1,50 +1,61 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Product } from 'src/models/product';
+import { LoginService } from './login.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-
 export class ProductService {
+  constructor(private http: HttpClient, private login: LoginService) {}
 
-  constructor() { 
+  apiLink: string = 'https://localhost:44375/api/products';
+  token: string = this.login.GetToken();
+
+  getProducts(): Observable<Product[]> {
+    return this.http.get<Product[]>(this.apiLink, {
+      headers: {
+        "Authorization": `Bearer ${this.token}`,
+      },
+    });
   }
 
-  products: Product[] = [
-    {
-      id: 1,
-      name: "Pear",
-      description: "Pears are fruits produced and consumed around the world, growing on a tree and harvested in late Summer into October.",
-      img: "https://static.libertyprim.com/files/familles/poire-large.jpg?1569271830",
-      price: 6.75
-    },
-    {
-      id: 2,
-      name: "Grapefruit",
-      description: "The grapefruit (Citrus × paradisi) is a subtropical citrus tree known for its relatively large, sour to semisweet, somewhat bitter fruit.", img: "https://www.kirbysproduce.com/wp-content/uploads/2020/04/pink-grapefruit.jpg",
-      price: 19.29
-    },
-    {
-      id: 3,
-      name: "Mango",
-      description: "A mango is an edible stone fruit produced by the tropical tree Mangifera indica which is believed to have originated from the region between northwestern Myanmar, Bangladesh, and northeastern India. ",
-      img: "http://www.greenada.com/Uploads/UrunResimleri/buyuk/greenada-meyvemango-adet-f949.jpg",
-      price: 23.560
-    },
-    {
-      id: 4,
-      name: "Coconut",
-      description: "The coconut tree (Cocos nucifera) is a member of the palm tree family (Arecaceae) and the only living species of the genus Cocos.",
-      img: "https://static8.depositphotos.com/1000141/964/i/600/depositphotos_9647938-stock-photo-fresh-coconut.jpg",
-      price: 14.4321
-    }
-  ];
+  getProductById(id: number): Observable<Product> {
+    let apiPath: string = `${this.apiLink}${id}`;
 
-  GetProducts(): Product[] {
-    return this.products;
+    return this.http.get<Product>(apiPath, {
+      headers: {
+        "Authorization": `Bearer ${this.token}`,
+      },
+    });
   }
 
-  GetProductById(id: number): Product {
-    return this.products.filter(prod => prod.id == id)[0];
+  addProduct(product: Product): Observable<Product> {
+    return this.http.post<Product>(this.apiLink, product, {
+      headers: {
+        "Authorization": `Bearer ${this.token}`,
+      },
+    });
+  }
+
+  updateProduct(product: Product): Observable<Product> {
+    let apiPath: string = `${this.apiLink}${product.id}`;
+
+    return this.http.put<Product>(apiPath, product, {
+      headers: {
+        "Authorization": `Bearer ${this.token}`,
+      },
+    });
+  }
+
+  deleteProduct(product: Product): Observable<Product> {
+    let apiPath: string = `${this.apiLink}${product.id}`;
+
+    return this.http.delete<Product>(apiPath, {
+      headers: {
+        "Authorization": `Bearer ${this.token}`,
+      },
+    });
   }
 }

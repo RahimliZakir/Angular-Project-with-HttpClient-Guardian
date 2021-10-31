@@ -22,3 +22,13 @@
     }
   }
 }
+
+span.user-profile {
+  display: inline-block;
+  background-image: url(../../assets/images/author/author_photo.jfif);
+  height: 50px;
+  width: 50px;
+  background-size: cover;
+  background-position: top;
+  border-radius: 50%;
+}

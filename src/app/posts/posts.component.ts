@@ -37,12 +37,6 @@ export class PostsComponent implements OnInit {
 
   pntr: string = 'pointer';
 
-  authorImgStyle: any = {
-    width: '50px',
-    height: '50px',
-    objectFit: 'cover',
-  };
-
   RemovePost(post: Post): void {
     let result: boolean = confirm(
       'Seçilmiş məhsulu silmək istədiyinizdən əminsiniz?'
