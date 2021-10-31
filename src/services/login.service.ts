@@ -3,33 +3,31 @@ import { Injectable } from '@angular/core';
 import { AlertifyService } from './alertify.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class LoginService {
-
-  constructor(private http: HttpClient, private alertify: AlertifyService) { }
+  constructor(private http: HttpClient, private alertify: AlertifyService) {}
 
   loginStatus: boolean = false;
 
-  accPath: string = "https://localhost:44375/api/account";
+  accPath: string = 'https://localhost:44375/api/account';
 
   SignIn(loginForm: LoginForm): any {
     this.http.post<LoginResult>(this.accPath, loginForm).subscribe(
-      data => {
+      (data) => {
         if (data.error == false) {
           sessionStorage.setItem('token', data.token);
           this.loginStatus = true;
-        }
-        else if (data.error == true) {
+        } else if (data.error == true) {
           this.loginStatus = false;
         }
       },
-      error => {
+      (error) => {
         this.loginStatus = false;
         sessionStorage.removeItem('token');
 
         if (error.status == 401) {
-          this.alertify.error("İstifadəçi adı və ya şifrə yanlışdır!");
+          this.alertify.error('İstifadəçi adı və ya şifrə yanlışdır!');
         }
       }
     );
