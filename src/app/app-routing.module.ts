@@ -9,18 +9,18 @@ import { PostsComponent } from './posts/posts.component';
 import { ProductsComponent } from './products/products.component';
 
 const routes: Routes = [
-  //Posts
+  //TODO: Posts
   { path: 'posts', component: PostsComponent },
   { path: 'post-details/:id', component: PostDetailsComponent },
   { path: 'add-post', component: AddPostComponent },
   { path: 'edit-post/:editId', component: EditPostComponent },
-  //Posts
-  //Categories
+  //TODO: Posts
+  //TODO: Categories
   { path: 'categories', component: CategoriesComponent },
-  //Categories
-  //Products
+  //TODO: Categories
+  //TODO: Products
   { path: 'products', component: ProductsComponent },
-  //Products
+  //TODO: Products
   // { path: '', redirectTo: "posts", pathMatch: 'full' }
 ];
 

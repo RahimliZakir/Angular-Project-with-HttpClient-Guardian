@@ -20,9 +20,15 @@ import { LoginGuard } from 'src/guards/login.guard';
 import { CategoriesComponent } from './categories/categories.component';
 import { ProductsComponent } from './products/products.component';
 import { CategorySearcherPipe } from 'src/pipes/category-searcher.pipe';
+import { CategoryDetailsComponent } from './category-details/category-details.component';
+import { AddCategoryComponent } from './add-category/add-category.component';
+import { EditCategoryComponent } from './edit-category/edit-category.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
+import { AddProductComponent } from './add-product/add-product.component';
+import { EditProductComponent } from './edit-product/edit-product.component';
 
 @NgModule({
-  declarations: [
+  declarations: [						
     AppComponent,
     ProductSearcherPipe,
     ManatPipe,
@@ -38,7 +44,13 @@ import { CategorySearcherPipe } from 'src/pipes/category-searcher.pipe';
     CategoriesComponent,
     ProductsComponent,
     CategorySearcherPipe,
-  ],
+      CategoryDetailsComponent,
+      AddCategoryComponent,
+      EditCategoryComponent,
+      ProductDetailsComponent,
+      AddProductComponent,
+      EditProductComponent
+   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
