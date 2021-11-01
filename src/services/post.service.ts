@@ -16,11 +16,7 @@ export class PostService {
   GetPosts(): Observable<Post[]> {
     let token: string = this.loginService.GetToken();
 
-    return this.http.get<Post[]>(this.link, {
-      headers: {
-        "Authorization": `Bearer ${token}`
-      }
-    });
+    return this.http.get<Post[]>(this.link);
   }
 
   GetPostById(id: number): Observable<Post> {

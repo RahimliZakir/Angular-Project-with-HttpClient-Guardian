@@ -14,11 +14,7 @@ export class CategoryService {
   token: string = this.login.GetToken();
 
   getCategories(): Observable<Category[]> {
-    return this.http.get<Category[]>(this.apiLink, {
-      headers: {
-        Authorization: `Bearer ${this.token}`,
-      },
-    });
+    return this.http.get<Category[]>(this.apiLink);
   }
 
   getCategoryById(id: number): Observable<Category> {

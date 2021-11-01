@@ -17,23 +17,55 @@ import { ProductsComponent } from './products/products.component';
 const routes: Routes = [
   //TODO: Posts
   { path: 'posts', component: PostsComponent },
-  { path: 'post-details/:id', component: PostDetailsComponent },
-  { path: 'add-post', component: AddPostComponent },
-  { path: 'edit-post/:editId', component: EditPostComponent },
+  {
+    path: 'post-details/:id',
+    component: PostDetailsComponent,
+    canActivate: [LoginGuard],
+  },
+  { path: 'add-post', component: AddPostComponent, canActivate: [LoginGuard] },
+  {
+    path: 'edit-post/:editId',
+    component: EditPostComponent,
+    canActivate: [LoginGuard],
+  },
   //TODO: Posts
   //TODO: Categories
   { path: 'categories', component: CategoriesComponent },
-  { path: 'category-details/:id', component: CategoryDetailsComponent },
-  { path: 'add-category', component: AddCategoryComponent },
-  { path: 'edit-category/:id', component: EditCategoryComponent },
+  {
+    path: 'category-details/:id',
+    component: CategoryDetailsComponent,
+    canActivate: [LoginGuard],
+  },
+  {
+    path: 'add-category',
+    component: AddCategoryComponent,
+    canActivate: [LoginGuard],
+  },
+  {
+    path: 'edit-category/:id',
+    component: EditCategoryComponent,
+    canActivate: [LoginGuard],
+  },
   //TODO: Categories
   //TODO: Products
   { path: 'products', component: ProductsComponent },
-  { path: 'product-details/:id', component: ProductDetailsComponent },
-  { path: 'add-product', component: AddProductComponent },
-  { path: 'edit-product/:id', component: EditProductComponent },
+  {
+    path: 'product-details/:id',
+    component: ProductDetailsComponent,
+    canActivate: [LoginGuard],
+  },
+  {
+    path: 'add-product',
+    component: AddProductComponent,
+    canActivate: [LoginGuard],
+  },
+  {
+    path: 'edit-product/:id',
+    component: EditProductComponent,
+    canActivate: [LoginGuard],
+  },
   //TODO: Products
-  // { path: '', redirectTo: "posts", pathMatch: 'full' }
+  { path: '', redirectTo: 'posts', pathMatch: 'full' },
 ];
 
 @NgModule({

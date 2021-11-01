@@ -14,11 +14,7 @@ export class ProductService {
   token: string = this.login.GetToken();
 
   getProducts(): Observable<Product[]> {
-    return this.http.get<Product[]>(this.apiLink, {
-      headers: {
-        "Authorization": `Bearer ${this.token}`,
-      },
-    });
+    return this.http.get<Product[]>(this.apiLink);
   }
 
   getProductById(id: number): Observable<Product> {

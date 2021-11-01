@@ -52,7 +52,7 @@ import { EditProductComponent } from './edit-product/edit-product.component';
     EditProductComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
-  providers: [],
+  providers: [LoginGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

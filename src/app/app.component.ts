@@ -7,13 +7,13 @@ import { LoginForm, LoginService } from 'src/services/login.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  constructor(/*public loginService: LoginService*/) {}
+  constructor(public loginService: LoginService) {}
 
-  // user: LoginForm = new LoginForm();
+  user: LoginForm = new LoginForm();
 
-  // signIn(): void {
-  //   this.loginService.SignIn(this.user);
-  // }
+  signIn(): void {
+    this.loginService.SignIn(this.user);
+  }
 
   title = 'MyAngularGuardianAPIControlCenter';
 }

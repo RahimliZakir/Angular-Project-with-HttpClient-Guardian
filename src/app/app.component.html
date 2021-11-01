@@ -1,5 +1,4 @@
 <div id="wrapper">
-
   <!--Start sidebar-wrapper-->
   <app-sidebar></app-sidebar>
   <!--End sidebar-wrapper-->
@@ -15,7 +14,9 @@
   </div>
   <!--End content-wrapper-->
   <!--Start Back To Top Button-->
-  <a href="javaScript:void();" class="back-to-top"><i class="fa fa-angle-double-up"></i> </a>
+  <a href="javaScript:void();" class="back-to-top"
+    ><i class="fa fa-angle-double-up"></i>
+  </a>
   <!--End Back To Top Button-->
 
   <!--Start footer-->
@@ -25,22 +26,33 @@
   <!--start color switcher-->
   <app-go-to-top></app-go-to-top>
   <!--end color switcher-->
-
 </div>
 <!--End wrapper-->
 
-<!-- <div class="login-window active" *ngIf="!loginService.IsLoggedin()">
+<div class="login-window active" *ngIf="!loginService.IsLoggedin()">
   <div class="login-main">
     <div class="login-content">
       <div class="form-group">
         <label for="username">Username</label>
-        <input autocomplete="off" [(ngModel)]="user.username" type="text" id="username" class="form-control">
+        <input
+          autocomplete="off"
+          [(ngModel)]="user.username"
+          type="text"
+          id="username"
+          class="form-control"
+        />
       </div>
       <div class="form-group">
         <label for="password">Password</label>
-        <input autocomplete="off" [(ngModel)]="user.password" type="password" id="password" class="form-control">
+        <input
+          autocomplete="off"
+          [(ngModel)]="user.password"
+          type="password"
+          id="password"
+          class="form-control"
+        />
       </div>
       <button (click)="signIn()" class="btn btn-warning">Daxil ol</button>
     </div>
   </div>
-</div> -->
+</div>
