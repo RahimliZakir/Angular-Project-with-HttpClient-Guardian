@@ -22,7 +22,7 @@ export class ProductService {
   }
 
   getProductById(id: number): Observable<Product> {
-    let apiPath: string = `${this.apiLink}${id}`;
+    let apiPath: string = `${this.apiLink}/${id}`;
 
     return this.http.get<Product>(apiPath, {
       headers: {
@@ -40,7 +40,7 @@ export class ProductService {
   }
 
   updateProduct(product: Product): Observable<Product> {
-    let apiPath: string = `${this.apiLink}${product.id}`;
+    let apiPath: string = `${this.apiLink}/${product.id}`;
 
     return this.http.put<Product>(apiPath, product, {
       headers: {
@@ -50,7 +50,7 @@ export class ProductService {
   }
 
   deleteProduct(product: Product): Observable<Product> {
-    let apiPath: string = `${this.apiLink}${product.id}`;
+    let apiPath: string = `${this.apiLink}/${product.id}`;
 
     return this.http.delete<Product>(apiPath, {
       headers: {

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from 'src/models/product';
+import { LoginService } from 'src/services/login.service';
 import { ProductService } from 'src/services/product.service';
 
 @Component({
@@ -11,6 +12,7 @@ import { ProductService } from 'src/services/product.service';
 export class ProductDetailsComponent implements OnInit {
   constructor(
     private service: ProductService,
+    private loginService: LoginService,
     private activatedRoute: ActivatedRoute
   ) {}
 
@@ -26,7 +28,9 @@ export class ProductDetailsComponent implements OnInit {
         (data) => {
           this.product = data;
         },
-        (error) => {}
+        (error) => {
+          this.loginService.TimeOut();
+        }
       );
     });
   }

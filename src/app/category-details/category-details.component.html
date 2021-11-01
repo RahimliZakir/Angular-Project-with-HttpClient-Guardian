@@ -1,3 +1,12 @@
-<p>
-  category-details works!
-</p>
+<div class="container">
+  <div class="row post-details-row">
+    <div class="offset-2 col-md-8 offset-2 main-details">
+      <div class="contents" [style.textAlign]="centered">
+        <h1>Id: {{ category.id }}</h1>
+        <h3>{{ category.name }}</h3>
+        <p>{{ category.createdDate }}</p>
+        <a class="btn btn-danger" routerLink="/categories">Geriyə</a>
+      </div>
+    </div>
+  </div>
+</div>

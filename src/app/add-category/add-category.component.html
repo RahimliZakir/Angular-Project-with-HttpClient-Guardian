@@ -1,3 +1,23 @@
-<p>
-  add-category works!
-</p>
+<div class="container">
+  <div class="row">
+    <div class="offet-2 col-md-8 offset-2 add-post-div">
+      <h1 class="text-center">Adding Category Control Center</h1>
+      <div class="form-collection">
+        <div class="form-group">
+          <label for="title">Name: </label>
+          <input
+            autocomplete="off"
+            type="text"
+            [(ngModel)]="category.name"
+            id="title-input"
+            class="form-control"
+          />
+        </div>
+        <button (click)="AddPost()" class="btn btn-success">Əlavə et</button>
+        <button (click)="BackToHome()" class="btn btn-danger ml-3">
+          Geriyə
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -28,7 +28,7 @@ import { AddProductComponent } from './add-product/add-product.component';
 import { EditProductComponent } from './edit-product/edit-product.component';
 
 @NgModule({
-  declarations: [						
+  declarations: [
     AppComponent,
     ProductSearcherPipe,
     ManatPipe,
@@ -44,13 +44,13 @@ import { EditProductComponent } from './edit-product/edit-product.component';
     CategoriesComponent,
     ProductsComponent,
     CategorySearcherPipe,
-      CategoryDetailsComponent,
-      AddCategoryComponent,
-      EditCategoryComponent,
-      ProductDetailsComponent,
-      AddProductComponent,
-      EditProductComponent
-   ],
+    CategoryDetailsComponent,
+    AddCategoryComponent,
+    EditCategoryComponent,
+    ProductDetailsComponent,
+    AddProductComponent,
+    EditProductComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
